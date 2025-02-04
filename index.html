@@ -32,10 +32,15 @@
 	<script src="libs/plasio/js/laslaz.js"></script>
 	
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
-		document.title = "My Portal";
-		viewer.setEDLEnabled(true);
-		viewer.setBackground("skybox"); // ["skybox", "gradient", "black", "white"];
-		viewer.setDescription(``);
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+
+viewer.setEDLEnabled(true);
+viewer.setFOV(60);
+viewer.setPointBudget(1*1000*1000);
+viewer.setBackground("skybox");
+viewer.loadSettingsFromURL();
+document.title = "My Portal";
+
 	
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
 		<div id="potree_render_area"></div>
